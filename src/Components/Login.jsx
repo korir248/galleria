@@ -26,7 +26,7 @@ const Login = () => {
 
   return (
     <>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='login-form'>
     <label>Username</label>
     <input name="username" placeholder="Enter Username" required onChange={handleChange}/>
     
@@ -34,7 +34,7 @@ const Login = () => {
     <input name="password" placeholder='Enter password'required onChange={handleChange} />
 
     
-    <input type="submit" value='Login'/>
+    <input className='btn-submit' type="submit" value='Login'/>
     <p>Don't have an account? <a href='/signup'>Sign up</a></p>
 
     </form>

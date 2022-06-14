@@ -3,7 +3,7 @@ export const loginUser = (user) => {
     console.log(username,password);
     let users = sessionStorage.getItem("users")
 
-    users.find(user=> user.username === username)
+    users.filter(user=> user.username === username)
 
     return {
         type: "LOGIN",
@@ -12,14 +12,10 @@ export const loginUser = (user) => {
 }
 
 export const signupUser = (user) => {
-
-    sessionStorage.clear()
-
-    let users = sessionStorage.setItem("users",[])
     
     // users.push(user)
     // JSON.parse(sessionStorage.getItem("users"))
-    console.log(users)
+    console.log(user)
 
     return {
         type: "SIGNUP",

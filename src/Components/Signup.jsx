@@ -21,7 +21,7 @@ const Signup = () => {
 
   return (<>
 
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="signup-form">
     
     <label>Fullname</label>              
     <input name="fullname" placeholder="Enter Fullname" required onChange={handleChange}/>
@@ -33,7 +33,7 @@ const Signup = () => {
     <input name="password" placeholder='Enter password'required onChange={handleChange}/>
     <label>Confirm Password</label>
     <input name="confirmpass" placeholder='Confirm password'required onChange={handleChange} />
-    <input type="submit" value='Signup'/>
+    <input className='btn-submit' type="submit" value='Signup'/>
     <p>Have an account? <a href='/login'>Log In</a></p>
 
     </form>

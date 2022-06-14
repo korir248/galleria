@@ -5,6 +5,7 @@ import Signup from './Components/Signup';
 import Home from './Components/Home'
 import CreatePost from './Components/CreatePost';
 import Header from './Components/Header'
+import Footer from './Components/mini/Footer';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <Route path="/createpost" element={<CreatePost/>}/>
     </Routes>
     </div>
+
+    <Footer/>
 
 
     </BrowserRouter>

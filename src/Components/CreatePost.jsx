@@ -29,15 +29,16 @@ const CreatePost = () => {
       selectedImage,
       description
     }
-    sessionStorage.setItem('posts')
+    let posts = [post]
+    sessionStorage.setItem('posts',posts)
     dispatch(addPost(post))
 
 
   }
   return (<>
     <div >
-        <div className='create-post'>
-        <form onSubmit={handleSubmit}>
+        <div>
+        <form onSubmit={handleSubmit} className="create-post">
     
     <label>File to upload</label>              
     <input name="file" type='file' required onChange={handleChange1}/>
@@ -45,7 +46,7 @@ const CreatePost = () => {
     <input name="description" placeholder="Enter description" required onChange={handleChange}/>
     
     
-    <input type="submit" value='Create Post'/>
+    <input className='btn-submit' type="submit" value='Create Post'/>
 
     </form>
         </div>
