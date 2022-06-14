@@ -17,7 +17,7 @@ const Header = () => {
     </>
         
       ): (
-        <p></p>
+        <a href='/'><button>Back to Posts</button></a>
       )
     }
     </div>

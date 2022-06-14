@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addPost } from '../redux/actions/postActions'
+import { addPost } from '../../redux/actions/postActions'
 
 
 const CreatePost = () => {
@@ -47,11 +47,12 @@ const CreatePost = () => {
     
     
     <input className='btn-submit' type="submit" value='Create Post'/>
+    <a href='/'><button>Back to Posts</button></a>
 
     </form>
         </div>
     </div>
-    <a href='/'><button>Back to Posts</button></a>
+    
   </>
   )
 }

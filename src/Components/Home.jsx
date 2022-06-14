@@ -1,16 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import CreatePost from './CreatePost'
-import Posts from './Posts'
+import Posts from './mini/Posts'
 
 const Home = () => {
   const { user}= useSelector(state=> state.user)
   console.log(user);
-  return (<>
-   
-    <Posts/>
-
-  
+  return (<>   
+    <Posts/>  
 
   </>
   )

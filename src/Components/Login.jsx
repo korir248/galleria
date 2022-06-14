@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { loginUser } from '../redux/actions/userActions'
 
 const Login = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     
     const [formData, setFormData] = useState({})
@@ -19,7 +21,7 @@ const Login = () => {
     const handleSubmit =(e)=>{
         e.preventDefault()
         console.log(formData);
-        dispatch(loginUser(formData))
+        dispatch(loginUser(formData,navigate))
 
         
     }

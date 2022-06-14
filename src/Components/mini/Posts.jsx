@@ -7,19 +7,23 @@ const Posts = () => {
     console.log(posts);
   return (
     <>
-    <div>Posts</div>
+    <div >Available Posts</div>
+    <div className='posts'>
+
     {posts.map((post,ix)=>{
 
       
         return (
-          <div key={ix}>
-            {/* <p>{post.file}</p> */}
+          <div key={ix} className='card'>
+          <div className='portrait'>
             <img src={post.image} alt='not found'/>
+          </div>
             <p>{post.description}</p>
 
           </div>
         )
     })}
+    </div>
 
     </>
   )
