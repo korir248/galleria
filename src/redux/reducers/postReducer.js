@@ -1,14 +1,21 @@
 const initialState ={
   posts : [{
-    file: 'some path',
-    description: 'some image'
-  }]
+    image: 'src/assets/Vader.jpeg',
+    description: 'darth Vader'
+  },
+{
+  image: "src/assets/Meruem-Specialist-Featured.jpg",
+  description: "King Meruem"
+}]
 
 }
 const postReducer =  (state = initialState, { type, payload }) => {
   switch (type) {
 
   case "ADD_POST":
+    sessionStorage.setItem("posts",state.posts)
+
+
     return { ...state, posts: [...state.posts, payload] }
 
   default:

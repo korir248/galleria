@@ -4,22 +4,32 @@ import { addPost } from '../redux/actions/postActions'
 
 
 const CreatePost = () => {
-  const [post, setPost] = useState({})
+  const [description, setDescription] = useState("")
+  const [selectedImage, setSelectedImage] = useState(null);
   
   const dispatch = useDispatch()
 
   const handleChange = (e)=>{
     e.preventDefault()
     
-    setPost({...post,[e.target.name]: e.target.value})
-    const files = e.target.files
-    console.log(files[0])
+    setDescription(e.target.value)
+
+  }
+  const handleChange1=(e)=>{
+    e.preventDefault()
+
+    setSelectedImage(e.target.files[0])
 
   }
 
   const handleSubmit =(e)=>{
     e.preventDefault()
-    console.log(post)
+
+    const post = {
+      selectedImage,
+      description
+    }
+    sessionStorage.setItem('posts')
     dispatch(addPost(post))
 
 
@@ -30,7 +40,7 @@ const CreatePost = () => {
         <form onSubmit={handleSubmit}>
     
     <label>File to upload</label>              
-    <input name="file" type='file' required onChange={handleChange}/>
+    <input name="file" type='file' required onChange={handleChange1}/>
     <label>Description</label>
     <input name="description" placeholder="Enter description" required onChange={handleChange}/>
     

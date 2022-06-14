@@ -5,24 +5,10 @@ import Posts from './Posts'
 
 const Home = () => {
   const { user}= useSelector(state=> state.user)
-  console.log(user.isEmpty);
+  console.log(user);
   return (<>
-    {
-      Object.keys(user).length > 0 ? (
-        <>
-    <div>Home</div>    
-    
+   
     <Posts/>
-
-        </>
-
-      ): <>
-
-      <p className="error">No posts at the moment </p>
-      <CreatePost/>
-      
-      </>
-    }
 
   
 

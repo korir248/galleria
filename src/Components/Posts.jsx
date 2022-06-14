@@ -9,10 +9,12 @@ const Posts = () => {
     <>
     <div>Posts</div>
     {posts.map((post,ix)=>{
+
+      
         return (
           <div key={ix}>
-            <p>{post.file}</p>
-            <img src={post.file} alt='img'/>
+            {/* <p>{post.file}</p> */}
+            <img src={post.image} alt='not found'/>
             <p>{post.description}</p>
 
           </div>
