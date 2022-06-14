@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { loginUser } from '../redux/actions/userActions'
 
 const Login = () => {
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     
     const [formData, setFormData] = useState({})
@@ -14,26 +16,28 @@ const Login = () => {
         setFormData({...formData,[e.target.name]: e.target.value})
 
     }
-    const loggingInUser =(e)=>{
+    const handleSubmit =(e)=>{
         e.preventDefault()
+        console.log(formData);
+        dispatch(loginUser(formData))
 
-        console.log("hi")
+        
     }
 
   return (
     <>
-        <p>Login Page</p>
-        <div className="login-form">
-            <label>Username</label>
-            <input name="username" placeholder="Enter Username" onChange={handleChange} required/>
+        <form onSubmit={handleSubmit}>
+    <label>Username</label>
+    <input name="username" placeholder="Enter Username" required onChange={handleChange}/>
+    
+    <label>Password</label>
+    <input name="password" placeholder='Enter password'required onChange={handleChange} />
 
-            <label >Password</label>
-            <input name="password" type="password" placeholder="Enter Password" onChange={handleChange} required/>
+    
+    <input type="submit" value='Login'/>
+    <p>Don't have an account? <a href='/signup'>Sign up</a></p>
 
-            <button  type="submit" onSubmit={()=> loggingInUser(formData)}>Login</button>
-            {/* <i>Don't have an account? <Link to="/register">Sign up now!</Link></i><br/>
-                    <i><Link to="/">Cancel</Link></i> */}
-        </div>
+    </form>
     </>
   )
 }

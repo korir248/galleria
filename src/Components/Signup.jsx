@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { signupUser } from '../redux/actions/userActions'
 
 const Signup = () => {
     const [formData, setFormData] = useState({})
+    const dispatch = useDispatch()
 
     const handleChange = (e)=>{
         e.preventDefault()
@@ -12,7 +15,7 @@ const Signup = () => {
 
     const handleSubmit =(e)=>{
         e.preventDefault()
-        console.log(formData);
+        dispatch(signupUser(formData))
 
     }
 
@@ -27,9 +30,9 @@ const Signup = () => {
     <label>Email</label>
     <input name="email" placeholder="Enter Email" required onChange={handleChange}/>
     <label>Password</label>
-    <input name="password" placeholder='Enter password'required />
+    <input name="password" placeholder='Enter password'required onChange={handleChange}/>
     <label>Confirm Password</label>
-    
+    <input name="confirmpass" placeholder='Confirm password'required onChange={handleChange} />
     <input type="submit" value='Signup'/>
     <p>Have an account? <a href='/login'>Log In</a></p>
 
