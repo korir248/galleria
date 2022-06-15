@@ -7,7 +7,7 @@ const userReducer =  (state = initialState, { type, payload }) => {
   switch (type) {
 
   case "LOGIN":
-    const newuser = state.users.find(user=>user.username===payload.username)
+    const newuser = state.users?.find(user=>user.username===payload.username)
     if(!newuser){
       sessionStorage.setItem("user",JSON.stringify(payload))
 

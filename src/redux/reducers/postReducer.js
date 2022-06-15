@@ -15,6 +15,8 @@ const postReducer =  (state = initialState, { type, payload }) => {
   case "ADD_POST":
     sessionStorage.setItem("posts",state.posts)
 
+    console.log(sessionStorage.getItem("posts"))
+
 
     return { ...state, posts: [...state.posts, payload] }
 
