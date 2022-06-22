@@ -6,6 +6,11 @@ const initialState ={
 const userReducer =  (state = initialState, { type, payload }) => {
   switch (type) {
 
+  case "LOGOUT":
+    return {
+      ...state, user: {}
+    }
+
   case "LOGIN":
     const newuser = state.users?.find(user=>user.username===payload.username)
     if(!newuser){
@@ -20,7 +25,7 @@ const userReducer =  (state = initialState, { type, payload }) => {
 
   
   case "SIGNUP":
-    const specUser = state.users.find(user=>user.username===payload.username)
+    const specUser = state.users?.find(user=>user.username===payload.username)
 
     const existingUser = state.users.find(user=> user.username === specUser.username)
     if(existingUser){

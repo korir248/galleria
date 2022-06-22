@@ -47,7 +47,6 @@ const CreatePost = () => {
     
     
     <input className='btn-submit' type="submit" value='Create Post'/>
-    <a href='/'><button>Back to Posts</button></a>
 
     </form>
         </div>

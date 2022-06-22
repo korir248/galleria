@@ -14,3 +14,7 @@ export const signupUser = (user) => {
         payload: user
     }
 }
+export const logOut = () => ({
+  type: "LOGOUT",
+
+})

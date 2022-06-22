@@ -1,5 +1,7 @@
 const initialState ={
-  posts : [{
+
+  posts: sessionStorage.getItem("posts") ? JSON.parse(sessionStorage.getItem("posts")) : 
+  [{
     image: 'src/assets/Vader.jpeg',
     description: 'darth Vader'
   },
@@ -13,6 +15,8 @@ const postReducer =  (state = initialState, { type, payload }) => {
   switch (type) {
 
   case "ADD_POST":
+    
+    state.posts?.push(payload)
     sessionStorage.setItem("posts",state.posts)
 
     console.log(sessionStorage.getItem("posts"))
