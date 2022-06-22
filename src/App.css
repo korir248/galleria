@@ -27,6 +27,8 @@ label{
   font-size: 16px;
   color: red;
   font-weight: bold;
+  margin-left: 10%;
+  padding: 30px;
 }
 
 .header{
@@ -37,13 +39,34 @@ label{
   background-color: orange;
   justify-content: space-between;
 }
+
 .header > a{
   text-decoration: none;
   font-size: large;
   font-weight: bold;
   color: white;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
+li {
+  float: left;
+  padding: 10px;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+}
+.active{
+  background-color: brown;
+}
 .header >div{
   margin-right: 20%;
   margin-left: 20px;
@@ -107,4 +130,7 @@ label{
 }
 .card > p{
   padding: 10px;
+}
+.log-out{
+  /* cursor: pointer; */
 }
